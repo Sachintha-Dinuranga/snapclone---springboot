@@ -1,5 +1,6 @@
 package com.jetbranis.clone.SnapClone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
 
 public class Photo {
@@ -7,8 +8,19 @@ public class Photo {
     @NotEmpty
     private String fileName;
 
+    @JsonIgnore
+    private byte[]  data;
+
     //raw data
 
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 
     public Photo() {
     }
